@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="شهادات وتكريمات الأستاذ رامي عصام - معلم لغة عربية معتمد مع خبرة 19 عام في التدريس والتطوير التعليمي.">
+    <meta name="keywords" content="شهادات, تكريمات, الأستاذ رامي عصام, معلم عربي, الإذاعة المدرسية, الثقافة العامة">
+    <meta name="author" content="رامي عصام">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#00bfff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="شهادات الأستاذ رامي عصام">
+    <meta property="og:description" content="معرض الشهادات والتكريمات والإذاعة المدرسية والثقافة العامة">
+    <meta property="og:image" content="image.png">
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content="الأستاذ رامي عصام">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="">
+    
+    <!-- Preload Assets -->
+    <link rel="preload" as="image" href="image.webp">
+    <link rel="preload" as="style" href="index.css">
+    
+    <title>الشهادات والتكريمات - الأستاذ رامي عصام</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.css">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; img-src 'self' data:; font-src 'self' data: https://cdnjs.cloudflare.com; connect-src 'self';">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        main {
+            width: 100%;
+            max-width: 900px;
+            margin: 60px auto;
+            padding: clamp(15px, 4vw, 30px);
+        }
+
+        /* Filter Button Styles */
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: clamp(10px, 2vw, 15px);
+            margin: 40px 0 50px;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, rgba(0, 191, 255, 0.1) 0%, rgba(0, 150, 214, 0.1) 100%);
+            border-radius: 20px;
+            border: 2px solid rgba(0, 191, 255, 0.3);
+            box-shadow: 0 8px 30px rgba(0, 150, 214, 0.2);
+            backdrop-filter: blur(10px);
+            animation: slideInDown 0.6s ease;
+        }
+
+        .filter-label {
+            color: var(--secondary);
+            font-weight: 700;
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .filter-label::before {
+            content: "⚙";
+            font-size: 1.2rem;
+            animation: spin 3s linear infinite;
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: clamp(8px, 1.5vw, 12px);
+        }
+
+        .filter-btn {
+            padding: clamp(8px, 1.5vw, 12px) clamp(16px, 2vw, 24px);
+            border: 2px solid var(--secondary);
+            background: transparent;
+            color: var(--secondary);
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: clamp(0.85rem, 1.5vw, 1rem);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+        }
+
+        .filter-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--secondary), #0096d6);
+            z-index: -1;
+            transition: left 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 191, 255, 0.4);
+        }
+
+        .filter-btn:hover::before {
+            left: 0;
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, var(--secondary) 0%, #0096d6 100%);
+            color: white;
+            box-shadow: 0 8px 20px rgba(0, 150, 214, 0.5);
+        }
+
+        .filter-btn.active::before {
+            left: 0;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .gallery-title {
+            text-align: center;
+            color: var(--secondary);
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: clamp(20px, 3vw, 30px);
+            padding: clamp(15px, 3vw, 25px);
+            
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            margin: 14px;
+            background-color: var(--light-bg);
+            transition: background-color 0.3s ease;
+        }
+
+        .gallery-item[data-reveal] {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .gallery-item[data-reveal].revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .gallery-item:nth-child(1) { animation-delay: 0.1s; }
+        .gallery-item:nth-child(2) { animation-delay: 0.2s; }
+        .gallery-item:nth-child(3) { animation-delay: 0.3s; }
+        .gallery-item:nth-child(4) { animation-delay: 0.4s; }
+        .gallery-item:nth-child(5) { animation-delay: 0.5s; }
+        .gallery-item:nth-child(6) { animation-delay: 0.6s; }
+
+        .gallery-item a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .empty-message {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            padding: 40px 20px;
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 150, 214, 0.1);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, var(--secondary) 0%, #0096d6 100%);
+            border-radius: 6px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #0096d6 0%, var(--secondary) 100%);
+        }
+
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .gallery-title {
+                margin-bottom: 30px;
+                font-size: 1.3rem;
+            }
+
+            .filter-container {
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px 15px;
+                margin: 30px 0 40px;
+            }
+
+            .filter-label {
+                width: 100%;
+                justify-content: center;
+                margin-right: 0;
+            }
+
+            .filter-buttons {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            main {
+                margin: 40px auto;
+                padding: 15px;
+            }
+
+            .gallery {
+                gap: 15px;
+            }
+
+            .gallery-title {
+                font-size: 1.2rem;
+                margin-bottom: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button id="darkModeToggle" class="dark-mode-toggle" aria-label="تبديل الوضع الليلي">
+            <i class="fas fa-moon"></i>
+        </button>
+        <div class="links"> 
+            <span class="icon">
+                <span></span>
+                <span></span>
+                <span></span> 
+            </span>
+            <ul>
+                <li><a href="index.html#cv">السيرة الذاتية</a></li>
+                <li><a href="index.html#contact">اتصل بي</a></li>
+                <li><a href="certification.html">الشهادات</a></li>
+                <li><a href="#honors">التكريمات</a></li>
+                <li><a href="#radio">الإذاعة المدرسية</a></li>
+                <li><a href="#culture">الثقافة العامة</a></li>
+                <li><a href="#share">المشاركة اللاصفية</a></li>
+            </ul>
+        </div>
+        <img src="image.webp" alt="Rami Essam">
+        <h1>الأستاذ رامي عصام</h1>
+        <p class="inform">معلم اللغة العربية</p>
+        <p class="inform">ومدقق لغوي</p>
+        <p class="inform">صانع وكاتب محتوى تعليمي</p>
+    </header>
+    
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb" aria-label="الملاحة">
+        <a href="index.html">الرئيسية</a>
+        <span> / </span>
+        <span class="current">الشهادات والتكريمات</span>
+    </nav>
+    <hr>
+    <main>
+        <!-- Filter Buttons -->
+        <div class="filter-container">
+            <label class="filter-label">
+                <i class="fas fa-filter"></i> الفلترة
+            </label>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">الكل</button>
+                <button class="filter-btn" data-filter="certificates">شهادات</button>
+                <button class="filter-btn" data-filter="honors">تكريمات</button>
+                <button class="filter-btn" data-filter="radio">إذاعة</button>
+                <button class="filter-btn" data-filter="culture">ثقافة عامة</button>
+                <button class="filter-btn" data-filter="share">مشاركة لاصفية</button>
+            </div>
+        </div>
+
+        <h2 class="gallery-title">الشهادات</h2>
+        <hr>
+        <div class="gallery">
+            <div class="certificates" id="certificates" data-section="certificates">
+
+            <div class="gallery-item" data-reveal>
+                <a href="ش1.webp" class="glightbox" data-gallery="certifications">
+                    <img src="ش1.webp" alt="شهادة 1" loading="lazy">
+                </a>
+            </div>
+
+            <div class="gallery-item" data-reveal>
+                <a href="ش2.webp" class="glightbox" data-gallery="certifications">
+                    <img src="ش2.webp" alt="شهادة 2" loading="lazy">
+                </a>
+            </div>
+
+            <div class="gallery-item" data-reveal>
+                <a href="ش3.webp" class="glightbox" data-gallery="certifications">
+                    <img src="ش3.webp" alt="شهادة 3" loading="lazy">
+                </a>
+            </div>
+
+            <div class="gallery-item" data-reveal>
+                <a href="ش4.webp" class="glightbox" data-gallery="certifications">
+                    <img src="ش4.webp" alt="شهادة 4" loading="lazy">
+                </a>
+            </div>
+            <div class="gallery-item" data-reveal>
+                <a href="a4.webp" class="glightbox" data-gallery="certifications">
+                    <img src="a4.webp" alt="شهادة 5" loading="lazy">
+                </a>
+            </div>
+            </div>
+        </div>
+        <hr>
+        <hr>
+        <h2 class="gallery-title">التكريمات</h2>
+        <hr><hr>
+        <div class="gallery">
+            <div class="honors" id="honors" data-section="honors">
+                <div class="gallery-item" data-reveal>
+                <a href="h4.webp" class="glightbox" data-gallery="certifications">
+                    <img src="h4.webp" alt="تكريم 1" loading="lazy">
+                </a>
+            </div>
+            <div class="gallery-item" data-reveal>
+                <a href="h2.webp" class="glightbox" data-gallery="certifications">
+                    <img src="h2.webp" alt="تكريم 2" loading="lazy">
+                </a>
+            </div>
+            <div class="gallery-item" data-reveal>
+                <a href="h5.webp" class="glightbox" data-gallery="certifications">
+                    <img src="h5.webp" alt="تكريم 3" loading="lazy">
+                </a>
+            </div>
+            <div class="gallery-item" data-reveal>
+                <a href="h3.webp" class="glightbox" data-gallery="certifications">
+                    <img src="h3.webp" alt="تكريم 4" loading="lazy">
+                </a>
+            </div>
+            <div class="gallery-item" data-reveal>
+                <a href="h6.webp" class="glightbox" data-gallery="certifications">
+                    <img src="h6.webp" alt="تكريم 5" loading="lazy">
+                </a>
+            </div>
+            <div class="gallery-item" data-reveal>
+                <a href="h1.webp" class="glightbox" data-gallery="certifications">
+                    <img src="h1.webp" alt="تكريم" loading="lazy">
+                </a>
+            </div>
+            <div class="gallery-item" data-reveal>
+                <a href="certification.webp" class="glightbox" data-gallery="certifications">
+                    <img src="certification.webp" alt="تكريم" loading="lazy">
+                </a>
+            </div>
+            </div>
+        </div>
+        <hr>
+        <hr>
+        <h2 class="gallery-title">الإذاعة المدرسية</h2>
+        <hr>
+        <hr>
+        <div class="gallery">
+            <div class="radio" id="radio" data-section="radio">
+
+            <div class="gallery-item" data-reveal>
+                <a href="r1.webp" class="glightbox" data-gallery="certifications">
+                    <img src="r1.webp" alt="الإذاعة 1" loading="lazy">
+                </a>
+            </div>
+
+            <div class="gallery-item" data-reveal>
+                <a href="r2.webp" class="glightbox" data-gallery="certifications">
+                    <img src="r2.webp" alt="الإذاعة 2" loading="lazy">
+                </a>
+            </div>
+            <div class="gallery-item" data-reveal>
+                <a href="r3.webp" class="glightbox" data-gallery="certifications">
+                    <img src="r3.webp" alt="الإذاعة 3" loading="lazy">
+                </a>
+            </div>
+            <div class="gallery-item" data-reveal>
+                <a href="r4.webp" class="glightbox" data-gallery="certifications">
+                    <img src="r4.webp" alt="الإذاعة 4" loading="lazy">
+                </a>
+            </div>
+            <div class="gallery-item" data-reveal>
+                <a href="r5.webp" class="glightbox" data-gallery="certifications">
+                    <img src="r5.webp" alt="الإذاعة 5" loading="lazy">
+                </a>
+            </div>
+            <div class="gallery-item" data-reveal>
+                <a href="r6.webp" class="glightbox" data-gallery="certifications">
+                    <img src="r6.webp" alt="الإذاعة 6" loading="lazy">
+                </a>
+            </div>
+            </div>
+        </div>
+            <hr>
+        <hr>
+        <h2 class="gallery-title">الثقافة العامة</h2>
+        <hr>
+        <hr>
+        <div class="gallery">
+            <div class="culture" id="culture" data-section="culture">
+
+            <div class="gallery-item" data-reveal>
+                <a href="c1.webp" class="glightbox" data-gallery="certifications">
+                    <img src="c1.webp" alt="ثقافة" loading="lazy">
+                </a>
+            </div>
+
+            
+            <div class="gallery-item" data-reveal>
+                <a href="c3.webp" class="glightbox" data-gallery="certifications">
+                    <img src="c3.webp" alt="ثقافة" loading="lazy">
+                </a>
+            </div>
+            <div class="gallery-item" data-reveal>
+                <a href="c4.webp" class="glightbox" data-gallery="certifications">
+                    <img src="c4.webp" alt="ثقافة" loading="lazy">
+                </a>
+            </div>
+            <div class="gallery-item" data-reveal>
+                <a href="c5.webp" class="glightbox" data-gallery="certifications">
+                    <img src="c5.webp" alt="ثقافة" loading="lazy">
+                </a>
+            </div>
+            
+            <div class="gallery-item" data-reveal>
+                <a href="c2.webp" class="glightbox" data-gallery="certifications">
+                    <img src="c2.webp" alt="ثقافة" loading="lazy">
+                </a>
+            </div>
+            <div class="gallery-item" data-reveal>
+                <a href="c7.webp" class="glightbox" data-gallery="certifications">
+                    <img src="c7.webp" alt="ثقافة" loading="lazy">
+                </a>
+            </div>
+            <div class="gallery-item" data-reveal>
+                <a href="c8.webp" class="glightbox" data-gallery="certifications">
+                    <img src="c8.webp" alt="ثقافة" loading="lazy">
+                </a>
+            </div>
+            <div class="gallery-item" data-reveal>
+                <a href="c6.webp" class="glightbox" data-gallery="certifications">
+                    <img src="c6.webp" alt="ثقافة" loading="lazy">
+                </a>
+            </div>
+            <div class="gallery-item" data-reveal>
+                <a href="c9.webp" class="glightbox" data-gallery="certifications">
+                    <img src="c9.webp" alt="ثقافة" loading="lazy">
+                </a>
+            </div>
+            <div class="gallery-item" data-reveal>
+                <a href="c10.webp" class="glightbox" data-gallery="certifications">
+                    <img src="c10.webp" alt="ثقافة" loading="lazy">
+                </a>
+            </div>
+            <div class="gallery-item" data-reveal>
+                <a href="c11.webp" class="glightbox" data-gallery="certifications">
+                    <img src="c11.webp" alt="ثقافة" loading="lazy">
+                </a>
+            </div>
+            <div class="gallery-item" data-reveal>
+                <a href="c12.webp" class="glightbox" data-gallery="certifications">
+                    <img src="c12.webp" alt="ثقافة" loading="lazy">
+                </a>
+            </div>
+        </div>
+        </div>
+        <hr>
+        <hr>
+        <h2 class="gallery-title">المشاركة اللاصفية</h2>
+        <hr>
+        <hr>
+        <div class="gallery">
+            <div class="share" id="share" data-section="share">
+
+            <div class="gallery-item" data-reveal>
+                <a href="s.jpeg" class="glightbox" data-gallery="certifications">
+                    <img src="s.jpeg" alt="مشاركة" loading="lazy">
+                </a>
+            </div>
+
+            
+            <div class="gallery-item" data-reveal>
+                <a href="s2.jpeg" class="glightbox" data-gallery="certifications">
+                    <img src="s2.jpeg" alt="مشاركة" loading="lazy">
+                </a>
+            </div>
+            <div class="gallery-item" data-reveal>
+                <a href="s3.jpeg" class="glightbox" data-gallery="certifications">
+                    <img src="s3.jpeg" alt="مشاركة" loading="lazy">
+                </a>
+            </div>
+            <div class="gallery-item" data-reveal>
+                <a href="s4.jpeg" class="glightbox" data-gallery="certifications">
+                    <img src="s4.jpeg" alt="مشاركة" loading="lazy">
+                </a>
+            </div>
+            
+            <div class="gallery-item" data-reveal>
+                <a href="s5.jpeg" class="glightbox" data-gallery="certifications">
+                    <img src="s5.jpeg" alt="مشاركة" loading="lazy">
+                </a>
+            </div>
+            <div class="gallery-item" data-reveal>
+                <a href="s6.jpeg" class="glightbox" data-gallery="certifications">
+                    <img src="s6.jpeg" alt="مشاركة" loading="lazy">
+                </a>
+            </div>
+            <div class="gallery-item" data-reveal>
+                <a href="s7.jpeg" class="glightbox" data-gallery="certifications">
+                    <img src="s7.jpeg" alt="مشاركة" loading="lazy">
+                </a>
+            </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="العودة للأعلى">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/966558526735?text=السلام عليكم ورحمة الله وبركاته" target="_blank" rel="noopener" class="whatsapp-btn" aria-label="تواصل عبر الواتس اب">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <!-- Page Loading Animation -->
+    <div id="pageLoader" class="page-loader">
+        <div class="loader-spinner"></div>
+    </div>
+    
+    <!-- Scroll Progress Bar -->
+    <div id="scrollProgress" class="scroll-progress-bar"></div>
+    
+    <!-- Footer -->
+    <footer class="footer" data-reveal>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>معلومات الاتصال</h3>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:Ramyessam676@gmail.com">البريد الإلكتروني</a></li>
+                    <li><i class="fas fa-phone"></i> <a href="tel:00201211213329">مصر: 00201211213329</a></li>
+                    <li><i class="fas fa-phone"></i> <a href="tel:+966558526735">الرياض: +966 55 852 6735</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>الوسائط الاجتماعية</h3>
+                <ul>
+                    <li><i class="fab fa-youtube"></i> <a href="https://youtube.com/channel/UCi9QLOAlDS4TLwYLMchhTaw?si=5mZqYXsIEUN2Gg72" target="_blank" rel="noopener">قناة اليوتيوب</a></li>
+                    <li><i class="fab fa-facebook"></i> <a href="https://www.facebook.com/share/1ADSuK3YaC/?mibextid=wwXIfr" target="_blank" rel="noopener">فيسبوك</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>الرابط السريع</h3>
+                <ul>
+                    <li><a href="index.html#cv">السيرة الذاتية</a></li>
+                    <li><a href="index.html#contact">اتصل بي</a></li>
+                    <li><a href="certification.html">الشهادات</a></li>
+                    <li><a href="images.html">الصور والفيديوهات</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 الأستاذ رامي عصام. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        const lightbox = GLightbox({
+            selector: '.glightbox',
+            touchNavigation: true,
+            loop: true,
+            autoplayVideos: true
+        });
+    </script>
+</body>
+</html>
