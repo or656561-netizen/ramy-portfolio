@@ -65,6 +65,9 @@
   margin-bottom:10px;
   display:block;
 }
+.item{
+ transition:.3s;
+}
 
 .filter-buttons{
   display:flex;
@@ -123,12 +126,9 @@
 <span class="filter-label"><i class="fas fa-filter"></i> الفلترة</span>
 
 <div class="filter-buttons">
-<button class="filter-btn active">الكل</button>
-<button class="filter-btn">شهادات</button>
-<button class="filter-btn">تكريمات</button>
-<button class="filter-btn">إذاعة</button>
-<button class="filter-btn">ثقافة عامة</button>
-<button class="filter-btn">مشاركة</button>
+<button class="filter-btn active" data-filter="all">الكل</button>
+<button class="filter-btn" data-filter="cv">السيرة الذاتية</button>
+<button class="filter-btn" data-filter="contact">اتصل بي</button>
 </div>
 </div>
     
@@ -137,7 +137,7 @@
     
 
     <!-- Contact (شمال) -->
-    <div class="card contact" id="contact" data-reveal>
+    <div class="card item contact" id="contact" data-reveal data-category="contact" >
       <h2>اتصل بي</h2>
       <ul>
         <li>
@@ -165,7 +165,7 @@
         </li>
       </ul>
     </div>
-    <div class="card cv" id="cv" data-reveal>
+    <div class="card cv item" id="cv" data-reveal data-category="cv">
       <h2>السيرة الذاتية</h2>
       <div class="intro">
         <p>رامي عصام عبد الحميد</p>
@@ -317,7 +317,50 @@
             <p>&copy; 2026 الأستاذ رامي عصام. جميع الحقوق محفوظة.</p>
         </div>
     </footer>
+    <script>
+
+const buttons = document.querySelectorAll(".filter-btn");
+const items = document.querySelectorAll(".item");
+
+buttons.forEach(btn => {
+
+  btn.onclick = () => {
+
+    buttons.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    const filter = btn.dataset.filter;
+    let target = null;
+
+    items.forEach(card => {
+
+      if (filter === "all") {
+        card.style.display = "block";
+      } else if (card.dataset.category === filter) {
+        card.style.display = "block";
+        target = card;
+      } else {
+        card.style.display = "none";
+      }
+
+    });
+
+    /* Scroll */
+
+    if(filter === "all"){
+      window.scrollTo({top:0,behavior:"smooth"});
+    }else if(target){
+      target.scrollIntoView({behavior:"smooth",block:"start"});
+    }
+
+  };
+
+});
+
+</script>
+
     
     <script src="script.js"></script>
 </body>
 </html>
+
