@@ -52,6 +52,46 @@
     .download-cv a:hover {
         background: linear-gradient(135deg, #0096d6 0%, var(--secondary) 100%);
     }
+      .filter-container{
+  background:var(--filter-bg);
+  padding:15px;
+  border-radius:12px;
+  margin-top:20px;
+  border:1px solid var(--border);
+}
+
+.filter-label{
+  font-weight:bold;
+  margin-bottom:10px;
+  display:block;
+}
+
+.filter-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  justify-content:center;
+}
+
+.filter-btn{
+  background:var(--filter-btn);
+  color:var(--text);
+  border:1px solid var(--border);
+  padding:6px 14px;
+  border-radius:20px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.filter-btn:hover{
+  transform:translateY(-2px);
+}
+
+.filter-btn.active{
+  background:var(--active);
+  color:#fff;
+  border-color:var(--active);
+}
   </style>
 </head>
 <body>
@@ -79,6 +119,18 @@
         
     </header>
     <hr>
+    <div class="filter-container">
+<span class="filter-label"><i class="fas fa-filter"></i> الفلترة</span>
+
+<div class="filter-buttons">
+<button class="filter-btn active">الكل</button>
+<button class="filter-btn">شهادات</button>
+<button class="filter-btn">تكريمات</button>
+<button class="filter-btn">إذاعة</button>
+<button class="filter-btn">ثقافة عامة</button>
+<button class="filter-btn">مشاركة</button>
+</div>
+</div>
     
 <main>
   <div class="container">
